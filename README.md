@@ -4,30 +4,31 @@
 
 ## 在线展示
 
-启用 GitHub Pages 后，网站地址为：
+网站已经通过 GitHub Pages 部署：
 
-`https://<GitHub用户名>.github.io/lightguard-ai/`
+[https://shy10086332.github.io/lightguard-ai/](https://shy10086332.github.io/lightguard-ai/)
 
 ## 项目定位
 
-本仓库是项目的静态公网展示站，包含项目背景、技术方案、真实系统截图、核对后的实验数据和本地运行说明。
+本仓库是项目的静态公网展示站，包含项目背景、技术方案、真实系统截图、八类完整实验对比、本地运行说明和技术来源。
 
 AI检测程序使用 Flask、PyTorch 与本地模型权重，不能直接在 GitHub Pages 静态服务器中运行。完整可运行程序随赛事提交包单独提供。
 
-## Pages部署
+## 部署状态
 
-仓库设置中进入 `Settings → Pages`：
-
-1. Source 选择 `Deploy from a branch`；
-2. Branch 选择 `main`；
-3. Folder 选择 `/ (root)`；
-4. 保存并等待部署完成。
+GitHub Pages 已绑定 `main` 分支根目录。推送到 `main` 后，网站会自动重新构建并发布。
 
 ## 数据说明
 
 - MVTec AD 2八类本地记录：Image AUROC宏平均58.96% → 62.07%，+3.11个百分点，5类提高、3类下降。
 - bottle类别一次配对记录：记忆库构建739.56秒 → 7.74秒，约95.5倍，仅代表该类别与该次运行。
 - 不将AUROC表述为生产线准确率，不将本地实验记录表述为官方排行榜成绩。
+
+## 技术与数据来源
+
+- [PatchCore论文](https://arxiv.org/abs/2106.08265)与[官方实现](https://github.com/amazon-science/patchcore-inspection)
+- [MVTec AD](https://www.mvtec.com/research-teaching/datasets/mvtec-ad)
+- [MVTec AD 2](https://www.mvtec.com/research-teaching/datasets/mvtec-ad-2)
 
 ## 许可证与用途
 
