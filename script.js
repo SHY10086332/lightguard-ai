@@ -44,13 +44,3 @@ dialog?.querySelector('.lightbox-close')?.addEventListener('click', () => dialog
 dialog?.addEventListener('click', (event) => {
   if (event.target === dialog) dialog.close();
 });
-
-const releaseLink = document.querySelector('#release-link');
-if (releaseLink && location.hostname.endsWith('github.io')) {
-  const owner = location.hostname.split('.')[0];
-  const repository = location.pathname.split('/').filter(Boolean)[0];
-  releaseLink.href = `https://github.com/${owner}/${repository}/releases/latest`;
-} else if (releaseLink) {
-  releaseLink.href = '#run';
-  releaseLink.addEventListener('click', (event) => event.preventDefault());
-}
