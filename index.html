@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="光稳智检：面向复杂光照环境的工业视觉异常检测与缺陷定位平台，南阳理工学院 iCAN 高校组软件赛道作品。">
+  <meta name="theme-color" content="#071a2b">
+  <title>光稳智检 LIGHTGUARD AI｜工业视觉异常检测平台</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" id="top">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="光稳智检首页">
+        <img src="assets/logo.png" alt="光稳智检标志">
+        <span><strong>光稳智检</strong><small>LIGHTGUARD AI</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="主要导航">
+        <a href="#problem">项目背景</a>
+        <a href="#solution">技术方案</a>
+        <a href="#demo">系统演示</a>
+        <a href="#evidence">实验结果</a>
+        <a href="#run">运行方式</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">iCAN 大学生创新创业大赛 · 高校组软件赛道</p>
+        <h1>让工业视觉检测<br><span>看懂缺陷，也看懂光照。</span></h1>
+        <p class="hero-lead">面向亮度变化、局部阴影、反光与色温漂移，研究正常样本的光照鲁棒特征记忆，并提供异常判别、像素级热力图、批量检测与结果导出。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#demo">查看真实系统画面</a>
+          <a class="button secondary" href="assets/docs/光稳智检_应用方案书.pdf" target="_blank" rel="noopener">阅读应用方案书</a>
+        </div>
+        <ul class="hero-facts" aria-label="项目特点">
+          <li><strong>15 类</strong><span>工业产品支持</span></li>
+          <li><strong>本地离线</strong><span>模型与权重随包提供</span></li>
+          <li><strong>可解释</strong><span>异常热力图与叠加图</span></li>
+        </ul>
+      </div>
+      <div class="hero-visual reveal" data-delay="100">
+        <div class="browser-frame">
+          <div class="browser-bar"><i></i><i></i><i></i><span>localhost:5000</span></div>
+          <img src="assets/screenshots/shot_home.png" alt="光稳智检系统真实首页截图">
+        </div>
+        <div class="status-card"><span class="status-dot"></span>真实系统截图 · 非效果图</div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="项目概览">
+      <div class="section-shell trust-grid">
+        <span>南阳理工学院</span>
+        <span>PatchCore 异常检测</span>
+        <span>WideResNet-50</span>
+        <span>Coreset 记忆库</span>
+        <span>本地可运行原型</span>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="problem">
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 · WHY</p>
+        <h2>要解决的不是“看不见”，<br>而是把光影误当成缺陷。</h2>
+        <p>固定光照数据与真实生产环境之间存在域偏移。正常产品在亮度、阴影、反光发生变化时，局部特征可能偏离训练记忆库，从而产生误报。</p>
+      </div>
+      <div class="problem-grid">
+        <article class="problem-card reveal">
+          <span>01</span><h3>光照域偏移</h3><p>亮度、局部阴影和色温变化可能改变正常区域的特征分布。</p>
+        </article>
+        <article class="problem-card reveal" data-delay="80">
+          <span>02</span><h3>缺陷样本稀缺</h3><p>采用只依赖正常训练图像的异常检测路线，降低对缺陷标注的依赖。</p>
+        </article>
+        <article class="problem-card reveal" data-delay="160">
+          <span>03</span><h3>结果需要解释</h3><p>除了正常/异常结论，还需用像素级热力图提示可疑区域。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section solution-section" id="solution">
+      <div class="section-shell">
+        <div class="section-heading light reveal">
+          <p class="eyebrow">02 · HOW</p>
+          <h2>从正常样本出发，构建光照鲁棒记忆。</h2>
+          <p>项目基于公开 PatchCore 方法开展研究，重点验证可控光照增强、固定容量记忆库对照与逐光照条件评测。</p>
+        </div>
+        <div class="pipeline reveal">
+          <div class="pipeline-step"><b>1</b><h3>正常样本</h3><p>原图与可控光照变体</p></div>
+          <i>→</i>
+          <div class="pipeline-step"><b>2</b><h3>多尺度特征</h3><p>WideResNet-50 局部表征</p></div>
+          <i>→</i>
+          <div class="pipeline-step"><b>3</b><h3>固定容量记忆库</h3><p>Coreset 采样与公平对照</p></div>
+          <i>→</i>
+          <div class="pipeline-step"><b>4</b><h3>检测与定位</h3><p>异常分数、热力图与导出</p></div>
+        </div>
+        <div class="principles">
+          <article class="principle reveal"><strong>公平对照</strong><p>统一特征层、评分方式和最终记忆库容量，区分光照覆盖收益与单纯增加特征数量。</p></article>
+          <article class="principle reveal" data-delay="80"><strong>分组评测</strong><p>按类别和光照条件报告结果，同时展示提升类别与退化类别。</p></article>
+          <article class="principle reveal" data-delay="160"><strong>应用边界</strong><p>当前定位为离线验证原型，现场部署仍需企业数据、阈值校准和可靠性验证。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="demo">
+      <div class="section-heading reveal">
+        <p class="eyebrow">03 · WORKING DEMO</p>
+        <h2>不是概念图，是实际运行画面。</h2>
+        <p>以下截图来自本地可运行程序的真实操作过程。点击图片可放大查看。</p>
+      </div>
+      <div class="feature-demo reveal">
+        <div class="feature-copy">
+          <span class="tag">单张检测</span>
+          <h3>异常判断与像素级定位同时呈现</h3>
+          <p>页面显示异常分数、类别阈值、判定状态和检测耗时，并提供原图、热力图和叠加图。</p>
+          <ul><li>类别独立阈值</li><li>异常热力图</li><li>检测耗时记录</li></ul>
+        </div>
+        <button class="image-button" data-full="assets/screenshots/shot_defect.png" aria-label="放大缺陷检测截图">
+          <img src="assets/screenshots/shot_defect.png" alt="缺陷样本检测结果截图">
+        </button>
+      </div>
+      <div class="gallery">
+        <figure class="gallery-card reveal"><button class="image-button" data-full="assets/screenshots/shot_normal.png"><img src="assets/screenshots/shot_normal.png" alt="正常样本检测截图"></button><figcaption><b>正常样本</b><span>分数低于阈值，判定正常</span></figcaption></figure>
+        <figure class="gallery-card reveal" data-delay="60"><button class="image-button" data-full="assets/screenshots/shot_heatmap.png"><img src="assets/screenshots/shot_heatmap.png" alt="异常热力图截图"></button><figcaption><b>异常热力图</b><span>提示局部可疑区域</span></figcaption></figure>
+        <figure class="gallery-card reveal" data-delay="120"><button class="image-button" data-full="assets/screenshots/shot_overlay.png"><img src="assets/screenshots/shot_overlay.png" alt="缺陷叠加图截图"></button><figcaption><b>叠加图</b><span>原图与异常响应联合展示</span></figcaption></figure>
+        <figure class="gallery-card reveal"><button class="image-button" data-full="assets/screenshots/shot_batch.png"><img src="assets/screenshots/shot_batch.png" alt="批量检测结果截图"></button><figcaption><b>批量检测</b><span>多图处理与结果统计</span></figcaption></figure>
+        <figure class="gallery-card reveal" data-delay="60"><button class="image-button" data-full="assets/screenshots/shot_comparison.png"><img src="assets/screenshots/shot_comparison.png" alt="离线实验对比截图"></button><figcaption><b>离线对比</b><span>展示已保存的实验记录</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section evidence-section" id="evidence">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">04 · EVIDENCE</p>
+          <h2>展示提升，也展示没有提升的地方。</h2>
+          <p>以下为团队本地实验记录。不同实验轮次不拼接计算，AUROC 不直接等同于生产线准确率。</p>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card accent reveal"><small>MVTec AD 2 · 8类宏平均</small><strong>58.96% <i>→</i> 62.07%</strong><p><b>+3.11 pp</b>｜5类提高、3类下降</p></article>
+          <article class="metric-card reveal" data-delay="80"><small>提升示例 · sheet_metal</small><strong>+11.94 pp</strong><p>60.14% → 72.08%</p></article>
+          <article class="metric-card warning reveal" data-delay="160"><small>退化示例 · rice</small><strong>−13.44 pp</strong><p>55.87% → 42.43%</p></article>
+        </div>
+        <div class="evidence-detail">
+          <article class="evidence-note reveal">
+            <span>一次配对记录</span><h3>bottle 记忆库构建</h3><p><strong>739.56 s</strong> → <strong>7.74 s</strong>，单次比值约95.5倍。</p><small>仅对应该类别与该次运行，不代表全部类别或端到端部署。</small>
+          </article>
+          <article class="evidence-note reveal" data-delay="80">
+            <span>十五类另一轮记录</span><h3>改进模型汇总</h3><p>Image AUROC <strong>88.13%</strong>｜Pixel AUROC <strong>92.43%</strong>｜AUPRO <strong>73.72%</strong></p><small>该轮记录不能与六类配对基线直接作差。</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="run">
+      <div class="run-card reveal">
+        <div>
+          <p class="eyebrow">05 · RUN LOCALLY</p>
+          <h2>可运行程序已完成并通过功能预检。</h2>
+          <p>Windows 10/11、Python 3.10—3.13 环境下，进入程序目录双击 <code>start.bat</code>，浏览器访问 <code>http://localhost:5000</code>。程序包内置骨干权重和15类记忆库，可在依赖已安装时离线运行。</p>
+          <div class="run-status"><span></span>已验证：单张正常/缺陷检测、热力图、5张批量检测、历史记录与CSV导出</div>
+        </div>
+        <div class="run-actions">
+          <a class="button primary" id="release-link" href="#" target="_blank" rel="noopener">下载本地运行版</a>
+          <a class="button secondary" href="assets/docs/光稳智检_应用方案书.pdf" target="_blank" rel="noopener">查看完整方案</a>
+          <small>本网页为公网展示站；AI推理在本地可运行程序中完成。</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell team-section">
+      <div class="team-card reveal">
+        <img src="assets/logo.png" alt="光稳智检标志">
+        <div><p class="eyebrow">TEAM</p><h2>南阳理工学院</h2><p>计算机与软件学院｜iCAN 大学生创新创业大赛 AI 应用创新挑战赛</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-shell footer-grid">
+      <div><strong>光稳智检 LIGHTGUARD AI</strong><p>面向复杂光照环境的工业视觉异常检测与缺陷定位平台</p></div>
+      <div><a href="#top">返回顶部 ↑</a><p>本项目仅用于科研、教学与比赛展示。</p></div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" aria-label="截图预览">
+    <button type="button" class="lightbox-close" aria-label="关闭">×</button>
+    <img src="" alt="放大的系统截图">
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
