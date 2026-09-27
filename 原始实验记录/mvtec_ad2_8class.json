@@ -1,0 +1,226 @@
+{
+  "can": {
+    "baseline": {
+      "image_auroc": 0.5012345679012346,
+      "image_f1": 0.7142857142857143,
+      "image_threshold": 36.18791580200195,
+      "normal_fpr": 1.0,
+      "pixel_auroc": 0.6095219979239375,
+      "pixel_ap": 7.092197688964736e-05,
+      "aupro": 0.17037392950548594,
+      "pixel_f1_max": 0.00022377876032417206,
+      "normal_false_alarm_area": 0.028095548115079368,
+      "build_time": 2451.5846099853516,
+      "predict_time": 8.062175989151001
+    },
+    "improved": {
+      "image_auroc": 0.4845679012345679,
+      "image_f1": 0.7142857142857143,
+      "image_threshold": 37.8723258972168,
+      "normal_fpr": 1.0,
+      "pixel_auroc": 0.615368156595989,
+      "pixel_ap": 8.63348355605937e-05,
+      "aupro": 0.248240393272902,
+      "pixel_f1_max": 0.0003087188969731077,
+      "normal_false_alarm_area": 0.018042601155045353,
+      "build_time": 26.396002531051636,
+      "predict_time": 8.332184553146362
+    }
+  },
+  "fabric": {
+    "baseline": {
+      "image_auroc": 0.46548821548821545,
+      "image_f1": 0.7416666666666667,
+      "image_threshold": 32.51106262207031,
+      "normal_fpr": 0.9242424242424242,
+      "pixel_auroc": 0.5749384345981575,
+      "pixel_ap": 0.016994668485858812,
+      "aupro": 0.2318143710740615,
+      "pixel_f1_max": 0.04968756119705898,
+      "normal_false_alarm_area": 0.02837074105210266,
+      "build_time": 3123.175849676132,
+      "predict_time": 22.453750371932983
+    },
+    "improved": {
+      "image_auroc": 0.42777777777777776,
+      "image_f1": 0.7317073170731707,
+      "image_threshold": 32.58662796020508,
+      "normal_fpr": 1.0,
+      "pixel_auroc": 0.49205872676448004,
+      "pixel_ap": 0.009537107520168717,
+      "aupro": 0.19444221903288259,
+      "pixel_f1_max": 0.02928094326251828,
+      "normal_false_alarm_area": 0.028584231988249845,
+      "build_time": 71.25820970535278,
+      "predict_time": 24.515058755874634
+    }
+  },
+  "fruit_jelly": {
+    "baseline": {
+      "image_auroc": 0.9108333333333333,
+      "image_f1": 0.9256198347107438,
+      "image_threshold": 37.111812591552734,
+      "normal_fpr": 0.25,
+      "pixel_auroc": 0.9008042419257081,
+      "pixel_ap": 0.24513291640767232,
+      "aupro": 0.6270162400289581,
+      "pixel_f1_max": 0.3686430267791336,
+      "normal_false_alarm_area": 0.0005570392219387755,
+      "build_time": 1495.924721479416,
+      "predict_time": 4.74731707572937
+    },
+    "improved": {
+      "image_auroc": 0.9824999999999999,
+      "image_f1": 0.96,
+      "image_threshold": 39.26551055908203,
+      "normal_fpr": 0.25,
+      "pixel_auroc": 0.9021149121716957,
+      "pixel_ap": 0.16639624946024412,
+      "aupro": 0.5829093171258767,
+      "pixel_f1_max": 0.27150046835061203,
+      "normal_false_alarm_area": 8.370535714285714e-05,
+      "build_time": 21.847410440444946,
+      "predict_time": 4.862589120864868
+    }
+  },
+  "rice": {
+    "baseline": {
+      "image_auroc": 0.5587301587301587,
+      "image_f1": 0.8108108108108109,
+      "image_threshold": 24.723093032836914,
+      "normal_fpr": 1.0,
+      "pixel_auroc": 0.8388752019459362,
+      "pixel_ap": 0.014581971706841187,
+      "aupro": 0.40909147368487825,
+      "pixel_f1_max": 0.04314326957776976,
+      "normal_false_alarm_area": 0.016602986060495626,
+      "build_time": 2089.42813873291,
+      "predict_time": 18.245136737823486
+    },
+    "improved": {
+      "image_auroc": 0.42433862433862435,
+      "image_f1": 0.8108108108108109,
+      "image_threshold": 25.710786819458008,
+      "normal_fpr": 1.0,
+      "pixel_auroc": 0.8070205706750428,
+      "pixel_ap": 0.007818669407269633,
+      "aupro": 0.37135684259225415,
+      "pixel_f1_max": 0.02320800381476783,
+      "normal_false_alarm_area": 0.01270337934280855,
+      "build_time": 49.135287284851074,
+      "predict_time": 18.372875452041626
+    }
+  },
+  "sheet_metal": {
+    "baseline": {
+      "image_auroc": 0.601388888888889,
+      "image_f1": 0.8823529411764706,
+      "image_threshold": 27.480384826660156,
+      "normal_fpr": 1.0,
+      "pixel_auroc": 0.8312057624560671,
+      "pixel_ap": 0.20590723196680097,
+      "aupro": 0.1956467399747183,
+      "pixel_f1_max": 0.30961868192904923,
+      "normal_false_alarm_area": 0.01668709475977891,
+      "build_time": 256.22426104545593,
+      "predict_time": 5.0611279010772705
+    },
+    "improved": {
+      "image_auroc": 0.7208333333333332,
+      "image_f1": 0.8823529411764706,
+      "image_threshold": 29.483612060546875,
+      "normal_fpr": 1.0,
+      "pixel_auroc": 0.8048382375822043,
+      "pixel_ap": 0.08150569057543716,
+      "aupro": 0.1702909749734391,
+      "pixel_f1_max": 0.15594734625876494,
+      "normal_false_alarm_area": 0.00907306281887755,
+      "build_time": 7.007241487503052,
+      "predict_time": 4.995360851287842
+    }
+  },
+  "vial": {
+    "baseline": {
+      "image_auroc": 0.6647619047619048,
+      "image_f1": 0.860655737704918,
+      "image_threshold": 36.808143615722656,
+      "normal_fpr": 0.9714285714285714,
+      "pixel_auroc": 0.8806521548558548,
+      "pixel_ap": 0.16128270866012137,
+      "aupro": 0.6793656563034771,
+      "pixel_f1_max": 0.22095022047541799,
+      "normal_false_alarm_area": 0.0028841335641399423,
+      "build_time": 1295.0980007648468,
+      "predict_time": 3.744400978088379
+    },
+    "improved": {
+      "image_auroc": 0.7104761904761904,
+      "image_f1": 0.8823529411764706,
+      "image_threshold": 38.67844009399414,
+      "normal_fpr": 0.8,
+      "pixel_auroc": 0.902570396868586,
+      "pixel_ap": 0.17307592519679585,
+      "aupro": 0.749272238509235,
+      "pixel_f1_max": 0.23613701764726278,
+      "normal_false_alarm_area": 0.0016462053571428571,
+      "build_time": 12.447515487670898,
+      "predict_time": 3.8217976093292236
+    }
+  },
+  "wallplugs": {
+    "baseline": {
+      "image_auroc": 0.3768518518518518,
+      "image_f1": 0.75,
+      "image_threshold": 38.37046432495117,
+      "normal_fpr": 1.0,
+      "pixel_auroc": 0.8324156131299872,
+      "pixel_ap": 0.011029398753476374,
+      "aupro": 0.2683709197807319,
+      "pixel_f1_max": 0.03231722136707444,
+      "normal_false_alarm_area": 0.033392458545918366,
+      "build_time": 1290.1123938560486,
+      "predict_time": 7.823885440826416
+    },
+    "improved": {
+      "image_auroc": 0.4724074074074074,
+      "image_f1": 0.75,
+      "image_threshold": 38.706809997558594,
+      "normal_fpr": 1.0,
+      "pixel_auroc": 0.8006854813695701,
+      "pixel_ap": 0.006872606114059264,
+      "aupro": 0.266768706411098,
+      "pixel_f1_max": 0.01980886413874076,
+      "normal_false_alarm_area": 0.009330157844387755,
+      "build_time": 20.026984691619873,
+      "predict_time": 7.936777830123901
+    }
+  },
+  "walnuts": {
+    "baseline": {
+      "image_auroc": 0.6375925925925926,
+      "image_f1": 0.7639484978540773,
+      "image_threshold": 35.05419921875,
+      "normal_fpr": 0.9,
+      "pixel_auroc": 0.9461102589316519,
+      "pixel_ap": 0.2764793453694741,
+      "aupro": 0.43102258401410476,
+      "pixel_f1_max": 0.3652460496140141,
+      "normal_false_alarm_area": 0.009544071534863948,
+      "build_time": 3039.4325437545776,
+      "predict_time": 19.844228982925415
+    },
+    "improved": {
+      "image_auroc": 0.7425925925925926,
+      "image_f1": 0.7860262008733624,
+      "image_threshold": 33.67465591430664,
+      "normal_fpr": 0.8166666666666667,
+      "pixel_auroc": 0.9349401101603015,
+      "pixel_ap": 0.24068738763267825,
+      "aupro": 0.4049284470336912,
+      "pixel_f1_max": 0.31302555990342185,
+      "normal_false_alarm_area": 0.01255414275085034,
+      "build_time": 71.491783618927,
+      "predict_time": 20.785775184631348
+    }
+  }
+}

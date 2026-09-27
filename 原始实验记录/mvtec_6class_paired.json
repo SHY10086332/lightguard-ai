@@ -1,0 +1,182 @@
+{
+  "bottle": {
+    "baseline": {
+      "image_auroc": 0.9452380952380952,
+      "image_f1_max": 0.958677680958951,
+      "image_threshold_from_test": 35.49846267700195,
+      "normal_fpr": 0.0,
+      "calibration_threshold": 34.987491607666016,
+      "pixel_auroc": 0.9703851044792481,
+      "pixel_ap": 0.6995620088023703,
+      "aupro": 0.8716802205358974,
+      "pixel_f1_max": 0.6730857710980646,
+      "build_time": 739.5589561462402,
+      "predict_time": 1.8503353595733643,
+      "memory_bank_size": 4076
+    },
+    "improved": {
+      "image_auroc": 0.984126984126984,
+      "image_f1_max": 0.97599999500032,
+      "image_threshold_from_test": 32.91483688354492,
+      "normal_fpr": 0.0,
+      "calibration_threshold": 39.66654968261719,
+      "pixel_auroc": 0.973005170624934,
+      "pixel_ap": 0.7374148816723696,
+      "aupro": 0.886066971567436,
+      "pixel_f1_max": 0.7090509372308744,
+      "build_time": 7.742253303527832,
+      "predict_time": 1.9082341194152832,
+      "memory_bank_size": 4076
+    }
+  },
+  "cable": {
+    "baseline": {
+      "image_auroc": 0.9205397301349325,
+      "image_f1_max": 0.8888888838923882,
+      "image_threshold_from_test": 35.98158645629883,
+      "normal_fpr": 0.017241379310344827,
+      "calibration_threshold": 39.9516487121582,
+      "pixel_auroc": 0.9314148147603023,
+      "pixel_ap": 0.485684556852943,
+      "aupro": 0.8493787040026479,
+      "pixel_f1_max": 0.580057017080758,
+      "build_time": 892.2735385894775,
+      "predict_time": 5.389971017837524,
+      "memory_bank_size": 4390
+    },
+    "improved": {
+      "image_auroc": 0.8240254872563718,
+      "image_f1_max": 0.801980193059504,
+      "image_threshold_from_test": 37.15937423706055,
+      "normal_fpr": 0.0,
+      "calibration_threshold": 43.21687698364258,
+      "pixel_auroc": 0.9105503531974615,
+      "pixel_ap": 0.3725622760277594,
+      "aupro": 0.7519096958135655,
+      "pixel_f1_max": 0.4169113709425604,
+      "build_time": 11.44668436050415,
+      "predict_time": 5.070630311965942,
+      "memory_bank_size": 4390
+    }
+  },
+  "capsule": {
+    "baseline": {
+      "image_auroc": 0.9046669325887515,
+      "image_f1_max": 0.940639264406497,
+      "image_threshold_from_test": 28.052156448364258,
+      "normal_fpr": 0.043478260869565216,
+      "calibration_threshold": 39.38752746582031,
+      "pixel_auroc": 0.9763430406239644,
+      "pixel_ap": 0.3793115524974218,
+      "aupro": 0.8624153760388802,
+      "pixel_f1_max": 0.4417932240185201,
+      "build_time": 755.7579336166382,
+      "predict_time": 4.380304336547852,
+      "memory_bank_size": 4076
+    },
+    "improved": {
+      "image_auroc": 0.8324690865576386,
+      "image_f1_max": 0.9396551674320007,
+      "image_threshold_from_test": 30.911495208740234,
+      "normal_fpr": 0.043478260869565216,
+      "calibration_threshold": 39.36488723754883,
+      "pixel_auroc": 0.9486490813451061,
+      "pixel_ap": 0.28144827800002636,
+      "aupro": 0.8211929610772577,
+      "pixel_f1_max": 0.3434073955333681,
+      "build_time": 10.120484828948975,
+      "predict_time": 4.4087395668029785,
+      "memory_bank_size": 4076
+    }
+  },
+  "carpet": {
+    "baseline": {
+      "image_auroc": 0.9991974317817015,
+      "image_f1_max": 0.9943502774860353,
+      "image_threshold_from_test": 24.917917251586914,
+      "normal_fpr": 0.0,
+      "calibration_threshold": 26.144283294677734,
+      "pixel_auroc": 0.9854023454332194,
+      "pixel_ap": 0.5349458203292022,
+      "aupro": 0.8194174359917417,
+      "pixel_f1_max": 0.5703530461514867,
+      "build_time": 1290.9916379451752,
+      "predict_time": 4.189943075180054,
+      "memory_bank_size": 5331
+    },
+    "improved": {
+      "image_auroc": 0.9911717495987159,
+      "image_f1_max": 0.9723756856091084,
+      "image_threshold_from_test": 25.884506225585938,
+      "normal_fpr": 0.0,
+      "calibration_threshold": 30.666362762451172,
+      "pixel_auroc": 0.9823721525514998,
+      "pixel_ap": 0.5281950095630208,
+      "aupro": 0.8994545911066469,
+      "pixel_f1_max": 0.5833638906264604,
+      "build_time": 17.278132677078247,
+      "predict_time": 4.720715522766113,
+      "memory_bank_size": 5331
+    }
+  },
+  "grid": {
+    "baseline": {
+      "image_auroc": 0.8880534670008354,
+      "image_f1_max": 0.8888888838921762,
+      "image_threshold_from_test": 27.737916946411133,
+      "normal_fpr": 0.0,
+      "calibration_threshold": 31.500638961791992,
+      "pixel_auroc": 0.9640438517655342,
+      "pixel_ap": 0.261959055063506,
+      "aupro": 0.7792099873088719,
+      "pixel_f1_max": 0.34351162064504615,
+      "build_time": 1076.6317007541656,
+      "predict_time": 1.6773624420166016,
+      "memory_bank_size": 5017
+    },
+    "improved": {
+      "image_auroc": 0.7878028404344193,
+      "image_f1_max": 0.844444439565432,
+      "image_threshold_from_test": 28.63910675048828,
+      "normal_fpr": 0.0,
+      "calibration_threshold": 36.344932556152344,
+      "pixel_auroc": 0.9007592723585283,
+      "pixel_ap": 0.16443261792765645,
+      "aupro": 0.7290159583048227,
+      "pixel_f1_max": 0.24560032462165046,
+      "build_time": 7.967069864273071,
+      "predict_time": 1.4271361827850342,
+      "memory_bank_size": 5017
+    }
+  },
+  "hazelnut": {
+    "baseline": {
+      "image_auroc": 0.9957142857142857,
+      "image_f1_max": 0.9859154879587383,
+      "image_threshold_from_test": 39.28594970703125,
+      "normal_fpr": 0.0,
+      "calibration_threshold": 44.8360710144043,
+      "pixel_auroc": 0.9772623350717083,
+      "pixel_ap": 0.4942221565332097,
+      "aupro": 0.817863041194128,
+      "pixel_f1_max": 0.561870572323534,
+      "build_time": 2436.686339855194,
+      "predict_time": 3.4207704067230225,
+      "memory_bank_size": 7526
+    },
+    "improved": {
+      "image_auroc": 0.9978571428571428,
+      "image_f1_max": 0.9859154879587383,
+      "image_threshold_from_test": 38.853187561035156,
+      "normal_fpr": 0.0,
+      "calibration_threshold": 41.845458984375,
+      "pixel_auroc": 0.9711314968645791,
+      "pixel_ap": 0.49082047190844186,
+      "aupro": 0.8170948896738413,
+      "pixel_f1_max": 0.5538639480686228,
+      "build_time": 18.964877128601074,
+      "predict_time": 3.6125423908233643,
+      "memory_bank_size": 7526
+    }
+  }
+}

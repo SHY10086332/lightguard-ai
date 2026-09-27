@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 运行期产物：上传缓存与检测结果
+01_可运行系统/static/uploads/
+*.csv
+
+# 模型权重：体积超 GitHub 单文件 100MB 上限，改由 Releases 附件提供
+01_可运行系统/weights/*.pth
+01_可运行系统/pretrained/*.pth
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.log

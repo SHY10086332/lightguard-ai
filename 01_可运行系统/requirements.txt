@@ -1,0 +1,16 @@
+# 工业视觉质检系统 - 依赖包
+# 说明：下列包与 app.py / model.py 的实际 import 一一对应（已核对）。
+# 运行本演示系统无需联网；联网仅在首次 pip 安装依赖时需要。
+
+# Web框架
+flask>=2.3.0
+werkzeug>=2.3.0
+
+# 深度学习
+torch>=2.0.0
+torchvision>=0.15.0
+
+# 图像处理
+Pillow>=10.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0

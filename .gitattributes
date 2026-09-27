@@ -1,0 +1,23 @@
+# 统一换行符，避免 Windows 批处理脚本被转换后无法运行
+* text=auto
+
+# 启动脚本为 GBK 编码 + CRLF，必须按原样保留
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制文件不做任何转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.pptx binary
+*.pth binary
+*.woff2 binary
+*.ttf binary
+
+# 便于 GitHub 语言统计
+*.py text
+*.js text
+*.css text
+*.html text
+*.md text

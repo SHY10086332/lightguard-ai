@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光稳智检 - 工业视觉质检系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- 图标字体本地化：原先从 cdnjs 加载，断网时全部图标会丢失，现随包内置 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/fontawesome/css/all.min.css') }}">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="光稳智检" class="logo-img">
+                <div class="logo-text">
+                    <h1>光稳智检</h1>
+                    <p class="logo-subtitle">LIGHTGUARD AI</p>
+                </div>
+            </div>
+            <div class="nav-links">
+                <span class="status-badge" id="status-badge">
+                    <i class="fas fa-circle"></i> 系统就绪
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 左侧：上传和控制区 -->
+            <div class="left-panel">
+                <!-- 当前模型信息 -->
+                <div class="card mode-card">
+                    <div class="card-header">
+                        <i class="fas fa-cogs"></i>
+                        <h2>当前运行模型</h2>
+                    </div>
+                    <div class="mode-content">
+                        <div class="mode-info">
+                            <span class="mode-label">模型:</span>
+                            <span class="mode-value">光稳智检改进模型</span>
+                        </div>
+                        <button class="btn btn-outline" id="comparison-btn" style="margin-top: 12px; width: 100%;">
+                            <i class="fas fa-chart-bar"></i> 查看离线实验对比
+                        </button>
+                        <p style="font-size: 11px; color: #94a3b8; margin-top: 8px; text-align: center;">
+                            查看基线与改进模型的离线实验对比数据
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 产品类别选择 -->
+                <div class="card category-card">
+                    <div class="card-header">
+                        <i class="fas fa-tags"></i>
+                        <h2>产品类别</h2>
+                    </div>
+                    <div class="category-content">
+                        <select id="category-select" class="category-select">
+                            <option value="">-- 请选择产品类别 --</option>
+                        </select>
+                        <button class="btn btn-primary" id="load-category-btn" disabled>
+                            <i class="fas fa-download"></i> 加载模型
+                        </button>
+                        <div class="category-info" id="category-info" style="display: none;">
+                            <span class="info-label">当前类别:</span>
+                            <span class="info-value" id="current-category">-</span>
+                            <span class="info-label">阈值:</span>
+                            <span class="info-value" id="current-threshold">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 上传区域 -->
+                <div class="card upload-card">
+                    <div class="card-header">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h2>图像上传</h2>
+                    </div>
+                    <div class="upload-area" id="upload-area">
+                        <div class="upload-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <p class="upload-text">拖拽图像到此处或点击上传</p>
+                        <p class="upload-hint">支持 JPG、PNG、BMP 格式，最大 16MB</p>
+                        <p class="upload-hint" style="margin-top: 8px; color: #2563eb; line-height: 1.7;">
+                            单张：选完再点「开始检测」<br>批量：选完立即自动检测
+                        </p>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                        <input type="file" id="batch-input" accept="image/*" multiple hidden>
+                        <div class="upload-buttons">
+                            <button class="btn btn-primary" id="select-btn" title="选择一张图片，选完点“开始检测”">
+                                <i class="fas fa-folder-open"></i> 选择单张
+                            </button>
+                            <button class="btn btn-secondary" id="batch-select-btn" title="可一次选多张，选完立即自动检测">
+                                <i class="fas fa-images"></i> 批量选择
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 预览区域 -->
+                    <div class="preview-area" id="preview-area" style="display: none;">
+                        <img id="preview-image" src="" alt="预览">
+                        <div class="preview-actions">
+                            <button class="btn btn-danger" id="clear-btn">
+                                <i class="fas fa-times"></i> 清除
+                            </button>
+                            <button class="btn btn-secondary" id="batch-select-preview-btn">
+                                <i class="fas fa-images"></i> 批量选择
+                            </button>
+                            <button class="btn btn-success" id="detect-btn">
+                                <i class="fas fa-search"></i> 开始检测
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 设置区域 -->
+                <div class="card settings-card">
+                    <div class="card-header">
+                        <i class="fas fa-cog"></i>
+                        <h2>检测设置</h2>
+                    </div>
+                    <div class="settings-content">
+                        <div class="setting-item">
+                            <label>异常阈值</label>
+                            <div class="slider-container">
+                                <input type="range" id="threshold-slider" min="10" max="60" value="30" step="0.1">
+                                <span id="threshold-value">30.00</span>
+                            </div>
+                            <p class="setting-hint">阈值基于特征距离，越低越严格</p>
+                        </div>
+                        <button class="btn btn-outline" id="reset-threshold-btn">
+                            <i class="fas fa-undo"></i> 重置默认
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 统计信息 -->
+                <div class="card stats-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h2>检测统计</h2>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="total-count">0</div>
+                            <div class="stat-label">总检测数</div>
+                        </div>
+                        <div class="stat-item normal">
+                            <div class="stat-value" id="normal-count">0</div>
+                            <div class="stat-label">正常</div>
+                        </div>
+                        <div class="stat-item abnormal">
+                            <div class="stat-value" id="abnormal-count">0</div>
+                            <div class="stat-label">异常</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="avg-time">0s</div>
+                            <div class="stat-label">平均耗时</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：结果展示区 -->
+            <div class="right-panel">
+                <!-- 检测结果 -->
+                <div class="card result-card">
+                    <div class="card-header">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h2>检测结果</h2>
+                    </div>
+                    <div class="result-content" id="result-content">
+                        <div class="empty-state">
+                            <i class="fas fa-search"></i>
+                            <p>请先选择产品类别，然后上传图像进行检测</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 可视化结果 -->
+                <div class="card visualization-card">
+                    <div class="card-header">
+                        <i class="fas fa-eye"></i>
+                        <h2>可视化分析</h2>
+                    </div>
+                    <div class="visualization-content" id="visualization-content">
+                        <div class="empty-state">
+                            <i class="fas fa-image"></i>
+                            <p>检测结果将在此显示</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 检测历史 -->
+                <div class="card history-card">
+                    <div class="card-header">
+                        <i class="fas fa-history"></i>
+                        <h2>检测历史</h2>
+                        <div class="history-actions">
+                            <button class="btn btn-sm btn-success" id="export-report-btn">
+                                <i class="fas fa-file-export"></i> 导出报告
+                            </button>
+                            <button class="btn btn-sm btn-outline" id="clear-history-btn">
+                                <i class="fas fa-trash"></i> 清空
+                            </button>
+                        </div>
+                    </div>
+                    <div class="history-content" id="history-content">
+                        <div class="empty-state">
+                            <i class="fas fa-clock"></i>
+                            <p>暂无检测记录</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 加载动画 -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p id="loading-text">AI检测中...</p>
+        </div>
+    </div>
+
+    <!-- 提示消息 -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}?v=20260927-recall"></script>
+</body>
+</html>
